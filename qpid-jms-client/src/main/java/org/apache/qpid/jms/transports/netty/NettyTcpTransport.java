@@ -366,7 +366,7 @@ public class NettyTcpTransport implements Transport {
             // Hold the first failure for later dispatch if connect succeeds.
             // This will then trigger disconnect using the first error reported.
             if (failureCause == null) {
-                LOG.trace("Holding error until connect succeeds: {}", cause.getMessage());
+                LOG.trace("Holding error until connect succeeds", cause);
                 failureCause = IOExceptionSupport.create(cause);
             }
 
